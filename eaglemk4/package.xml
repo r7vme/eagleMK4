@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>eaglemk4</name>
+  <version>0.0.1</version>
+  <description>The eaglemk4 package</description>
+
+  <maintainer email="rsokolkov@gmail.com">Roma Sokolkov</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>razor_imu_9dof</run_depend>
+
+  <export>
+  </export>
+</package>
