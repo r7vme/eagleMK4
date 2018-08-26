@@ -10,7 +10,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>razor_imu_9dof</run_depend>
+  <exec_depend>razor_imu_9dof</exec_depend>
 
   <export>
   </export>
