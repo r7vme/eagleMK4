@@ -12,6 +12,15 @@ Packages to be included into install:
 - CUDA
 - TensorRT
 
+# Install drivers
+
+Install cp210x driver (YDLIDAR X4). Easiest way to get precompiled version for `4.4.38-tegra` from JetsonHacks.
+```
+git clone https://github.com/jetsonhacks/installACMModule
+cd installACMModule
+./installCP210x.sh
+```
+
 # Install ROS
 
 Make sure you've enabled "universe" Ubuntu repositories in `/etc/apt/sources.list`.
