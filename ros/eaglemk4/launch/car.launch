@@ -1,0 +1,6 @@
+<launch>
+  <group ns="vesc">
+    <include file="$(find eaglemk4)/launch/mux.launch"/>
+    <include file="$(find eaglemk4)/launch/vesc.launch"/>
+  </group>
+</launch>
