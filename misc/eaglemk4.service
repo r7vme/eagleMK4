@@ -1,0 +1,14 @@
+[Unit]
+Description=ROS-based Eagle MK4 robocar.
+After=dev-vesc.device
+
+[Service]
+User=nvidia
+Restart=always
+ExecStart=/bin/bash -c "\
+  source /opt/ros/kinetic/setup.bash ; \
+  source /home/nvidia/eaglemk4_ws/devel/setup.bash ; \
+  roslaunch --screen eaglemk4 car.launch"
+
+[Install]
+WantedBy=multi-user.target

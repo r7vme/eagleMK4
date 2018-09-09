@@ -1,3 +1,8 @@
 <launch>
-  <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+  <arg name="joy_config" default="$(find eaglemk4)/config/joy.yaml" />
+  <rosparam file="$(arg joy_config)" command="load" />
+
+  <node pkg="joy" type="joy_node" name="joy_node" />
+
+  <node pkg="racecar" type="joy_teleop.py" name="joy_teleop" />
 </launch>

@@ -1,5 +1,5 @@
 # erpm (electrical rpm) = speed_to_erpm_gain * speed (meters / second) + speed_to_erpm_offset
-speed_to_erpm_gain: 4614
+speed_to_erpm_gain: 4088
 speed_to_erpm_offset: 0.0
 
 tachometer_ticks_to_meters_gain: 0.00225
@@ -7,7 +7,7 @@ tachometer_ticks_to_meters_gain: 0.00225
 max_servo_speed: 3.2 # radians/second
 servo_smoother_rate: 75.0 # messages/sec
 
-# servo smoother - limits acceleration and smooths anything above limit
+# speed smoother - limits acceleration and smooths anything above limit
 max_acceleration: 2.5 # meters/second^2
 throttle_smoother_rate: 75.0 # messages/sec
 
@@ -33,5 +33,5 @@ vesc_driver:
   speed_max: 3250
   position_min: 0.0
   position_max: 0.0
-  servo_min: 0.1
-  servo_max: 0.9
+  servo_min: 0.15
+  servo_max: 0.85
