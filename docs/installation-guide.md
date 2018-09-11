@@ -49,7 +49,12 @@ wstool update
 Install dependencies
 ```
 source devel/setup.bash
-rosdep install -a -y -r
+rosdep -y install --from-paths src --ignore-src
+```
+
+Patch librealsense to use built-in uvc module
+```
+patch -p1 -d src/librealsense -i $REPO/misc/uvc-v4l2.patch
 ```
 
 Build

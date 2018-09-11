@@ -2,3 +2,5 @@
 - git: {local-name: src/vesc, version: master, uri: 'https://github.com/mit-racecar/vesc.git'}
 - git: {local-name: src/ackermann_cmd_mux, version: master, uri: 'https://github.com/mit-racecar/racecar.git'}
 - git: {local-name: src/usb_cam, version: 0.3.6, uri: 'https://github.com/ros-drivers/usb_cam.git'}
+- git: {local-name: src/realsense, version: 1.8.1, uri: 'https://github.com/intel-ros/realsense.git'}
+- git: {local-name: src/libealsense, version: v1.12.1, uri: 'https://github.com/IntelRealSense/librealsense.git'}
