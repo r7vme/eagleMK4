@@ -1,4 +1,3 @@
-<!-- -*- mode: XML -*- -->
 <launch>
   <arg name="vesc_config" default="$(find eaglemk4)/config/vesc.yaml" />
   <rosparam file="$(arg vesc_config)" command="load" />

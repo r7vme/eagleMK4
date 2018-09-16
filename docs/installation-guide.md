@@ -32,6 +32,15 @@ Finally relogin and check that ros is available in your shell:
 rosversion -d
 ```
 
+# Install cartographer (SLAM)
+
+Install Google Cartographer and Cartographer ROS packages in separate workspace following this [link](https://aerotenna.readme.io/docs/compiling-google-cartographer). TBD overlay
+
+Make sure to install proto3
+```
+./src/cartographer/scripts/install_proto3.sh
+```
+
 # Configure ROS workspace
 
 ```
