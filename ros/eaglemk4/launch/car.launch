@@ -2,14 +2,15 @@
   <group ns="vesc">
     <include file="$(find eaglemk4)/launch/static_tf.launch"/>
     <include file="$(find eaglemk4)/launch/imu.launch"/>
+    <include file="$(find eaglemk4)/launch/zr300.launch"/>
+    <include file="$(find eaglemk4)/launch/c920.launch"/>
     <include file="$(find eaglemk4)/launch/lidar.launch"/>
-    <include file="$(find eaglemk4)/launch/vesc.launch"/>
     <include file="$(find eaglemk4)/launch/joy.launch"/>
+    <include file="$(find eaglemk4)/launch/vesc.launch"/>
     <include file="$(find eaglemk4)/launch/mux.launch"/>
     <include file="$(find eaglemk4)/launch/slam.launch"/>
 <!--
     <param name="robot_description" command="cat $(find eaglemk4)/config/model.xml" />
-    <include file="$(find eaglemk4)/launch/zr300.launch"/>
 -->
   </group>
 </launch>

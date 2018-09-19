@@ -1,4 +1,4 @@
-video_device: /dev/video0
+video_device: /dev/c920
 image_width: 640
 image_height: 480
 pixel_format: yuyv

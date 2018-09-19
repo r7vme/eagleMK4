@@ -1,6 +1,6 @@
 <launch>
   <include file="$(find realsense_camera)/launch/zr300_nodelet_rgbd.launch">
-    <arg name="enable_fisheye"      value="false" />
+    <arg name="enable_fisheye"      value="true" />
     <arg name="enable_imu"          value="false" />
     <arg name="depth_registered_processing"     value="false"/>
     <arg name="disparity_registered_processing" value="false"/>
