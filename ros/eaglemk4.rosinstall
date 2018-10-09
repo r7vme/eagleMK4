@@ -4,3 +4,4 @@
 - git: {local-name: src/usb_cam, version: 0.3.6, uri: 'https://github.com/ros-drivers/usb_cam.git'}
 - git: {local-name: src/realsense, version: 1.8.1, uri: 'https://github.com/intel-ros/realsense.git'}
 - git: {local-name: src/libealsense, version: v1.12.1, uri: 'https://github.com/IntelRealSense/librealsense.git'}
+- git: {local-name: src/racecar_potential_field_controller, version: master, uri: 'https://github.com/RacecarJ/racecar-controllers.git'}
