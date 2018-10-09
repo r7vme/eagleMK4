@@ -11,7 +11,6 @@
     <include file="$(find eaglemk4)/launch/controller_pf.launch"/>
 <!--
     <param name="robot_description" command="cat $(find eaglemk4)/config/model.xml" />
-    <include file="$(find eaglemk4)/launch/zr300.launch"/>
 -->
   </group>
 </launch>
