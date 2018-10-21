@@ -9,7 +9,7 @@ teleop:
     type: topic
     is_default: true
     message_type: ackermann_msgs/AckermannDriveStamped
-    topic_name: low_level/ackermann_cmd_mux/input/teleop
+    topic_name: /vesc/low_level/ackermann_cmd_mux/input/teleop
     message_value:
       -
         target: drive.speed
@@ -22,18 +22,18 @@ teleop:
   human_control:
     type: topic
     message_type: ackermann_msgs/AckermannDriveStamped
-    topic_name: low_level/ackermann_cmd_mux/input/teleop
+    topic_name: /vesc/low_level/ackermann_cmd_mux/input/teleop
     deadman_buttons: [4]
     axis_mappings:
       -
         axis: 3
         target: drive.speed
-        scale: 1.0                   # max 2 meters / second speed
+        scale: 1.0                   # max 1 meter / second speed
         offset: 0.0
       -
         axis: 0
         target: drive.steering_angle
-        scale: 0.61                  # max ~35 degrees steering angle
+        scale: 0.3                  # max steering angle
         offset: 0.0
 
   # Enable autonomous control by pressing right bumper
