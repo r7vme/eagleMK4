@@ -1,16 +1,29 @@
 <launch>
+  <arg name="use_camera" default="false" />
+  <arg name="use_existing_map" default="false" />
+
+  <arg name="map_path" default="$(find eaglemk4)/maps/map.yaml" />
+
   <group ns="eaglemk4">
-    <include file="$(find eaglemk4)/launch/static_tf.launch"/>
-    <include file="$(find eaglemk4)/launch/c920.launch"/>
-    <include file="$(find eaglemk4)/launch/joy.launch"/>
-<!--
     <include file="$(find eaglemk4)/launch/imu.launch"/>
+    <include file="$(find eaglemk4)/launch/joy.launch"/>
     <include file="$(find eaglemk4)/launch/lidar.launch"/>
-    <include file="$(find eaglemk4)/launch/slam.launch"/>
+    <include file="$(find eaglemk4)/launch/static_tf.launch"/>
+    <include file="$(find eaglemk4)/launch/camera.launch"
+             if="$(arg use_camera)"/>
+    <include file="$(find eaglemk4)/launch/slam.launch"
+             unless="$(arg use_existing_map)"/>
+    <include file="$(find eaglemk4)/launch/localize-on-existing-map.launch"
+             if="$(arg use_existing_map)">
+      <arg name="map_path" value="$(arg map_path)"/>
+    </include>
+<!--
     <include file="$(find eaglemk4)/launch/controller_pf.launch"/>
-    <param name="robot_description" command="cat $(find eaglemk4)/config/model.xml" />
 -->
   </group>
+<!--
+Run "vesc" namespaces is hard-coded in source code, so run in "vesc".
+-->
   <group ns="vesc">
     <include file="$(find eaglemk4)/launch/vesc.launch"/>
     <include file="$(find eaglemk4)/launch/mux.launch"/>
