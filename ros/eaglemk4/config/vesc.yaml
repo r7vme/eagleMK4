@@ -8,7 +8,7 @@ max_servo_speed: 3.2 # radians/second
 servo_smoother_rate: 75.0 # messages/sec
 
 # speed smoother - limits acceleration and smooths anything above limit
-max_acceleration: 2.5 # meters/second^2
+max_acceleration: 2.0 # meters/second^2
 throttle_smoother_rate: 75.0 # messages/sec
 
 # servo value (0 to 1) =  steering_angle_to_servo_gain * steering angle (radians) + steering_angle_to_servo_offset
@@ -28,9 +28,9 @@ vesc_driver:
   current_min: 0.0
   current_max: 20.0
   brake_min: -20000.0
-  brake_max: 200000.0
-  speed_min: -3250
-  speed_max: 3250
+  brake_max: 100000.0
+  speed_min: -1000
+  speed_max: 1000
   position_min: 0.0
   position_max: 0.0
   servo_min: 0.15

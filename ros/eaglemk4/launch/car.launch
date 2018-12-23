@@ -1,6 +1,6 @@
 <launch>
   <arg name="use_camera" default="false" />
-  <arg name="use_existing_map" default="false" />
+  <arg name="use_existing_map" default="true" />
 
   <arg name="map_path" default="$(find eaglemk4)/maps/map.yaml" />
 

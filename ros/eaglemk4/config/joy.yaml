@@ -1,6 +1,6 @@
 joy_node:
   deadzone: 0.01
-  autorepeat_rate: 20
+  autorepeat_rate: 40
   coalesce_interval: 0.01
 
 teleop:
@@ -28,7 +28,7 @@ teleop:
       -
         axis: 3
         target: drive.speed
-        scale: 1.0                   # max 1 meter / second speed
+        scale: 0.5                   # max 0.5 meter / second speed
         offset: 0.0
       -
         axis: 0

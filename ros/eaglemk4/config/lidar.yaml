@@ -6,6 +6,6 @@ angle_fixed: true
 intensities: false
 angle_min: -180
 angle_max: 180
-range_min: 0.08
+range_min: 0.1
 range_max: 10.0
 ignore_array: ""
