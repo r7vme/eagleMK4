@@ -1,11 +1,11 @@
 port: /dev/ydlidar
 baudrate: 128000
 model: X4
-frame_id: laser_frame
-angle_fixed: true
-intensities: false
+#frame_id: laser_frame
+#angle_fixed: true
+intensity: false
 angle_min: -180
 angle_max: 180
-range_min: 0.1
+range_min: 0.08
 range_max: 10.0
 ignore_array: ""

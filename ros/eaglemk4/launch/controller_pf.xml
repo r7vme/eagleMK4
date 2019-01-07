@@ -2,7 +2,8 @@
   <arg name="controller_pf" default="$(find eaglemk4)/config/controller_pf.yaml" />
 
   <node pkg="racecar_potential_field_controller" type="node" name="potential_field_controller">
-    <remap from="navigation" to="/ackermann_cmd_mux/input/navigation" />
+    <remap from="navigation" to="/vesc/high_level/ackermann_cmd_mux/input/default" />
+    <remap from="scan" to="/eaglemk4/scan" />
     <rosparam file="$(arg controller_pf)" command="load" />
   </node>
 </launch>

@@ -1,31 +1,31 @@
 <launch>
-  <arg name="use_camera" default="false" />
-  <arg name="use_existing_map" default="true" />
+<!--
+  <param name="robot_description" textfile="$(find eaglemk4)/urdf/eaglemk4.urdf"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+-->
 
+  <arg name="use_camera" default="false" />
+  <arg name="use_existing_map" default="false" />
   <arg name="map_path" default="$(find eaglemk4)/maps/map.yaml" />
 
   <group ns="eaglemk4">
-    <include file="$(find eaglemk4)/launch/imu.launch"/>
-    <include file="$(find eaglemk4)/launch/joy.launch"/>
-    <include file="$(find eaglemk4)/launch/lidar.launch"/>
-    <include file="$(find eaglemk4)/launch/static_tf.launch"/>
-    <include file="$(find eaglemk4)/launch/camera.launch"
-             if="$(arg use_camera)"/>
-    <include file="$(find eaglemk4)/launch/slam.launch"
-             unless="$(arg use_existing_map)"/>
-    <include file="$(find eaglemk4)/launch/localize-on-existing-map.launch"
-             if="$(arg use_existing_map)">
+    <include file="$(find eaglemk4)/launch/imu.xml"/>
+    <include file="$(find eaglemk4)/launch/joy.xml"/>
+    <include file="$(find eaglemk4)/launch/lidar.xml"/>
+    <include file="$(find eaglemk4)/launch/static_tf.xml"/>
+    <include file="$(find eaglemk4)/launch/camera.xml" if="$(arg use_camera)"/>
+    <include file="$(find eaglemk4)/launch/nav/nav.xml"/>
+    <include file="$(find eaglemk4)/launch/nav/slam.xml" unless="$(arg use_existing_map)"/>
+    <include file="$(find eaglemk4)/launch/nav/localize-on-existing-map.xml" if="$(arg use_existing_map)">
       <arg name="map_path" value="$(arg map_path)"/>
     </include>
-<!--
-    <include file="$(find eaglemk4)/launch/controller_pf.launch"/>
--->
   </group>
 <!--
 Run "vesc" namespaces is hard-coded in source code, so run in "vesc".
 -->
   <group ns="vesc">
-    <include file="$(find eaglemk4)/launch/vesc.launch"/>
-    <include file="$(find eaglemk4)/launch/mux.launch"/>
+    <include file="$(find eaglemk4)/launch/vesc.xml"/>
+    <include file="$(find eaglemk4)/launch/mux.xml"/>
   </group>
 </launch>
