@@ -10,7 +10,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>cartographer_ros</exec_depend>
   <exec_depend>razor_imu_9dof</exec_depend>
 
   <export>
