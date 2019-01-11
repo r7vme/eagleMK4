@@ -1,8 +1,12 @@
-# NOTE: 1.3.9 contains a bug with timestampts and requires misc/ydlidar-1.3.9.patch
-- git: {local-name: src/lidar, version: 1.3.9, uri: 'https://github.com/EAIBOT/ydlidar.git'}
+### Core ###
 - git: {local-name: src/vesc, version: master, uri: 'https://github.com/mit-racecar/vesc.git'}
 - git: {local-name: src/ackermann_cmd_mux, version: master, uri: 'https://github.com/mit-racecar/racecar.git'}
+# NOTE: 1.3.9 contains a bug with timestampts and requires misc/ydlidar-1.3.9.patch
+- git: {local-name: src/lidar, version: 1.3.9, uri: 'https://github.com/EAIBOT/ydlidar.git'}
 - git: {local-name: src/usb_cam, version: 0.3.6, uri: 'https://github.com/ros-drivers/usb_cam.git'}
-- git: {local-name: src/racecar_potential_field_controller, version: master, uri: 'https://github.com/RacecarJ/racecar-controllers.git'}
+
+### Navigation ###
 - git: {local-name: src/slam_gmapping, version: hydro-devel, uri: 'https://github.com/ros-perception/slam_gmapping.git'}
 - git: {local-name: src/navigation, version: kinetic-devel, uri: 'https://github.com/ros-planning/navigation.git'}
+- git: {local-name: src/teb_local_planner, version: kinetic-devel, uri: 'https://github.com/rst-tu-dortmund/teb_local_planner'}
+- git: {local-name: src/teb_local_planner_tutorials, version: kinetic-devel, uri: 'https://github.com/rst-tu-dortmund/teb_local_planner_tutorials.git'}

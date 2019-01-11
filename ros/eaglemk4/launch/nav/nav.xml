@@ -13,4 +13,13 @@
     <rosparam file="$(find eaglemk4)/config/nav/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find eaglemk4)/config/nav/base_local_planner_params.yaml" command="load" />
   </node>
+
+  <!--
+  Convert cmd_vel to ackermann.
+  -->
+  <node pkg="teb_local_planner_tutorials" type="cmd_vel_to_ackermann_drive.py" name="cmd_vel_to_ackermann_drive" output="screen">
+    <param name="twist_cmd_topic" value="cmd_vel"/>
+    <param name="ackermann_cmd_topic" value="low_level/ackermann_cmd_mux/input/default"/>
+    <param name="wheelbase" value=".25"/>
+  </node>
 </launch>
