@@ -28,12 +28,12 @@ teleop:
       -
         axis: 3
         target: drive.speed
-        scale: 0.5                   # max 0.5 meter / second speed
+        scale: 0.25                   # max 0.25 meter / second speed
         offset: 0.0
       -
         axis: 0
         target: drive.steering_angle
-        scale: 0.3                  # max steering angle
+        scale: 0.34                  # max steering angle
         offset: 0.0
 
   # Enable autonomous control by pressing right bumper
