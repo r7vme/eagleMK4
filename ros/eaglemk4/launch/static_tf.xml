@@ -3,7 +3,7 @@
 /base_link - on the axle between rear wheels
 /base_footprint - projection of /base_link on the ground
 /base_imu_link - IMU frame
-/laser_frame /laser - LIDAR frame
+/laser_frame /laser - LIDAR frame (angle 89.7)
 /camera_link - camera frame
 -->
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_base_footprint"
@@ -13,10 +13,10 @@
         args="0.26 0.0 0.11 0.0 0.0 0.0 1.0 /base_link /base_imu_link" />
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser"
-        args="0.32 0.0 0.17 0.0 0.0 -0.7071067811865475 -0.7071067811865475 /base_link /laser_frame" />
+        args="0.32 0.0 0.17 0.0 0.0 -0.705 -0.709 /base_link /laser_frame" />
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser_comp"
-        args="0.32 0.0 0.17 0.0 0.0 -0.7071067811865475 -0.7071067811865475 /base_link /laser" />
+        args="0.32 0.0 0.17 0.0 0.0 -0.705 -0.709 /base_link /laser" />
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_camera"
         args="0.23 0.0 0.11 0.0 0.0 0.0 1.0 /base_link /camera_link" />
