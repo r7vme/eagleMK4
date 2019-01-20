@@ -1,0 +1,16 @@
+<!--
+        Extended Kalman Filter node for estimating odometry (robot_localization package).
+
+        Uses odometry and IMU data to produce precise odometry (relative localization to starting point).
+-->
+<launch>
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+    <rosparam command="load" file="$(find eaglemk4)/config/nav/ekf_localization.yaml" />
+
+    <!--  Placeholder for output topic remapping
+    <remap from="odometry/filtered" to=""/>
+    <remap from="accel/filtered" to=""/>
+    -->
+
+  </node>
+</launch>

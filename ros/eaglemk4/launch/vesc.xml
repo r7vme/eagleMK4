@@ -1,3 +1,11 @@
+<!--
+        Vedder Electronic Speed Controller (VESC) node.
+
+        VESC number of benefits over default RC car controllers:
+        - provides odometry information
+        - allows slow speeds (e.g. 0.25 m/s)
+        - allows servo
+-->
 <launch>
   <arg name="vesc_config" default="$(find eaglemk4)/config/vesc.yaml" />
   <rosparam file="$(arg vesc_config)" command="load" />

@@ -1,3 +1,6 @@
+<!--
+        Main launch file for Ealge MK4 robot.
+-->
 <launch>
 <!--
   <param name="robot_description" textfile="$(find eaglemk4)/urdf/eaglemk4.urdf"/>
@@ -10,13 +13,14 @@
   <arg name="map_path" default="$(find eaglemk4)/maps/map.yaml" />
 
   <group ns="eaglemk4">
-    <include file="$(find eaglemk4)/launch/imu.xml"/>
     <include file="$(find eaglemk4)/launch/joy.xml"/>
-    <include file="$(find eaglemk4)/launch/lidar.xml"/>
     <include file="$(find eaglemk4)/launch/static_tf.xml"/>
-    <include file="$(find eaglemk4)/launch/camera.xml" if="$(arg use_camera)"/>
-    <include file="$(find eaglemk4)/launch/nav/nav.xml"/>
-    <include file="$(find eaglemk4)/launch/nav/slam.xml" unless="$(arg use_existing_map)"/>
+    <include file="$(find eaglemk4)/launch/sensors/camera.xml" if="$(arg use_camera)"/>
+    <include file="$(find eaglemk4)/launch/sensors/imu.xml"/>
+    <include file="$(find eaglemk4)/launch/sensors/lidar.xml"/>
+    <include file="$(find eaglemk4)/launch/nav/ekf_localization.xml"/>
+    <include file="$(find eaglemk4)/launch/nav/move_base.xml"/>
+    <include file="$(find eaglemk4)/launch/nav/slam_gmapping.xml" unless="$(arg use_existing_map)"/>
     <include file="$(find eaglemk4)/launch/nav/amcl.xml" if="$(arg use_existing_map)">
       <arg name="map_path" value="$(arg map_path)"/>
     </include>

@@ -1,0 +1,11 @@
+<!--
+        IMU (inertial measurement unit) node.
+
+        Using SparkFun MPU-9250 9DoF Razor IMU M0.
+-->
+<launch>
+  <arg name="imu_config_file" default="$(find eaglemk4)/config/sensors/imu.yaml"/>
+  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node">
+    <rosparam file="$(arg imu_config_file)" command="load"/>
+  </node>
+</launch>

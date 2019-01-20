@@ -1,3 +1,9 @@
+<!--
+        Driving input multiplexer.
+
+        Allows to use safety controller and teleoperations (human) with higher priority
+        than autonomous controllers.
+-->
 <launch>
   <!-- Chain the MUXs -->
   <node name="mux_chainer" pkg="topic_tools" type="relay"

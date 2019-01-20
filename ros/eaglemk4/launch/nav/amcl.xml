@@ -1,3 +1,8 @@
+<!--
+        Adaptive Monte Carlo Localization (AMCL) node.
+
+        Used for localization on existing maps (instead of SLAM).
+-->
 <launch>
   <arg name="map_path" default="$(find eaglemk4)/maps/map.yaml" />
   <!-- map server -->

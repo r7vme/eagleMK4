@@ -101,8 +101,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES eaglemk4
-  CATKIN_DEPENDS
-    razor_imu_9dof
+#  CATKIN_DEPENDS
 #  DEPENDS system_lib
 )
 

@@ -1,5 +1,10 @@
+<!--
+        Camera node.
+
+        Using Logitech c920.
+-->
 <launch>
-  <arg name="camera_config_file" default="$(find eaglemk4)/config/camera.yaml"/>
+  <arg name="camera_config_file" default="$(find eaglemk4)/config/sensors/camera.yaml"/>
 
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
     <rosparam file="$(arg camera_config_file)" command="load"/>

@@ -1,3 +1,6 @@
+<!--
+        Joystick node.
+-->
 <launch>
   <arg name="joy_config" default="$(find eaglemk4)/config/joy.yaml" />
   <rosparam file="$(arg joy_config)" command="load" />
