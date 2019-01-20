@@ -1,35 +1,25 @@
-#This file contains common configuration options for the two costmaps used in the navigation stack for more details on the parameters in this file, and a full list of the parameters used by the costmaps, please see http://www.ros.org/wiki/costmap_2d
-
-#For this example we'll configure the costmap in voxel-grid mode
-map_type: voxel
-
-#Voxel grid specific parameters
-origin_z: 0.0
-z_resolution: 0.2
-z_voxels: 10
-unknown_threshold: 9
-mark_threshold: 0
-
-#Set the tolerance we're willing to have for tf transforms
-transform_tolerance: 0.3
-
-#Obstacle marking parameters
-obstacle_range: 2.5
-max_obstacle_height: 2.0
-raytrace_range: 3.0
-
-#The footprint of the robot and associated padding
 footprint: [[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
-footprint_padding: 0.01
 
-#Cost function parameters
-inflation_radius: 0.55
-cost_scaling_factor: 10.0
+transform_tolerance: 0.2
+map_type: costmap
 
-#The cost at which a cell is considered an obstacle when a map is read from the map_server
-lethal_cost_threshold: 100
+obstacle_layer:
+ enabled: true
+ obstacle_range: 2.0
+ raytrace_range: 2.5
+ inflation_radius: 0.2
+ track_unknown_space: false
+ combination_method: 1
 
-#Configuration for the sensors that the costmap will use to update a map
-observation_sources: scan
-scan: {data_type: LaserScan, expected_update_rate: 0.4,
-  observation_persistence: 0.0, marking: true, clearing: true, max_obstacle_height: 0.4, min_obstacle_height: 0.08}
+ observation_sources: laser_scan_sensor
+ laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  10.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.3  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+static_layer:
+  enabled:              true
+  map_topic:            "map"

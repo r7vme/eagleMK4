@@ -12,7 +12,10 @@
   </node>
 
   <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver" />
-  <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom" />
+  <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom">
+    <!-- Remap /vesc/odom to /eaglemk4/odom -->
+    <remap from="odom" to="/eaglemk4/odom" />
+  </node>
   <node name="throttle_interpolator" pkg="ackermann_cmd_mux" type="throttle_interpolator.py" />
 
 </launch>

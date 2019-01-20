@@ -1,17 +1,19 @@
 <launch>
   <node pkg="move_base" type="move_base" name="move_base" output="screen">
-    <param name="recovery_behavior_enabled" value="false"/>
+    <param name="recovery_behavior_enabled" value="true"/>
     <param name="footprint_padding" value="0.01" />
-    <param name="controller_frequency" value="10.0" />
+    <param name="controller_frequency" value="5.0" />
     <param name="controller_patience" value="3.0" />
-    <param name="oscillation_timeout" value="30.0" />
+    <param name="oscillation_timeout" value="5.0" />
     <param name="oscillation_distance" value="0.5" />
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
 
     <rosparam file="$(find eaglemk4)/config/nav/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find eaglemk4)/config/nav/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find eaglemk4)/config/nav/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find eaglemk4)/config/nav/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find eaglemk4)/config/nav/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find eaglemk4)/config/nav/teb_local_planner_params.yaml" command="load" />
+
   </node>
 
   <!--
@@ -19,7 +21,7 @@
   -->
   <node pkg="teb_local_planner_tutorials" type="cmd_vel_to_ackermann_drive.py" name="cmd_vel_to_ackermann_drive" output="screen">
     <param name="twist_cmd_topic" value="cmd_vel"/>
-    <param name="ackermann_cmd_topic" value="low_level/ackermann_cmd_mux/input/default"/>
+    <param name="ackermann_cmd_topic" value="/vesc/high_level/ackermann_cmd_mux/input/default"/>
     <param name="wheelbase" value=".25"/>
   </node>
 </launch>

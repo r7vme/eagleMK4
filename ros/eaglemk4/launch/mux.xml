@@ -3,9 +3,10 @@
   <node name="mux_chainer" pkg="topic_tools" type="relay"
   args="/vesc/high_level/ackermann_cmd_mux/output /vesc/low_level/ackermann_cmd_mux/input/navigation" />
 
-  <!-- default (zero) ackermann command for high level MUX -->
+  <!-- default (zero) ackermann command for high level MUX
   <node name="zero_ackermann_cmd" pkg="rostopic" type="rostopic"
     args="pub -r 6 high_level/ackermann_cmd_mux/input/default ackermann_msgs/AckermannDriveStamped '{header: auto, drive: {steering_angle: 0.0, speed: 0.0} }'" />
+  -->
 
   <!-- High level MUX -->
   <include file="$(find ackermann_cmd_mux)/launch/standalone.launch" ns="high_level">
