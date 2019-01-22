@@ -55,10 +55,10 @@ TebLocalPlannerROS:
  weight_acc_lim_x: 1
  weight_acc_lim_theta: 1
  weight_kinematics_nh: 100
- weight_kinematics_forward_drive: 10
+ weight_kinematics_forward_drive: 50
  weight_kinematics_turning_radius: 1
  weight_optimaltime: 10
- weight_obstacle: 50
+ weight_obstacle: 100
  weight_dynamic_obstacle: 10 # not in use yet
 
  # Homotopy Class Planner

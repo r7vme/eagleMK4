@@ -11,3 +11,4 @@
 - git: {local-name: src/teb_local_planner, version: kinetic-devel, uri: 'https://github.com/rst-tu-dortmund/teb_local_planner'}
 - git: {local-name: src/teb_local_planner_tutorials, version: kinetic-devel, uri: 'https://github.com/rst-tu-dortmund/teb_local_planner_tutorials.git'}
 - git: {local-name: src/robot_localization, version: 2.6.3, uri: 'https://github.com/cra-ros-pkg/robot_localization.git'}
+- git: {local-name: src/explore_lite, version: kinetic-devel, uri: 'https://github.com/hrnr/m-explore.git'}
