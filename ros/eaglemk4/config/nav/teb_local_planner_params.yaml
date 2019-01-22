@@ -1,5 +1,7 @@
 TebLocalPlannerROS:
- odom_topic: odom
+ # Use filtered (Kalman) odometry based from VESC and IMU data.
+ odom_topic: odometry/filtered
+ #odom_topic: odom
  map_frame: map
 
  # Trajectory
