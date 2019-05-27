@@ -4,9 +4,7 @@ Platform (hardware specs + ROS package) for building awesome autonomous RC roboc
 
 Inspired and inherited from [MIT racecar](https://mit-racecar.github.io/) and [RacecarJ](https://racecarj.com/).
 
-![real1](docs/real1.jpg)
-![real2](docs/real2.jpg)
-![real3](docs/real3.jpg)
+![real1](docs/EagleLidarOnly.jpg)
 
 # Installation
 
